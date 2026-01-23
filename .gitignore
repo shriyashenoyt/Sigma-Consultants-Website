@@ -39,7 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-public/asha.jpg
-public/sathish.jpg
-public/Sigma_logo.png
