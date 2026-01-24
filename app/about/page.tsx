@@ -6,13 +6,13 @@ export default function AboutPage() {
     { 
       name: "Sathish Shenoy", 
       role: "Managing Director", 
-      image: "/sathish.jpg", // Path to your image in /public
+      image: "/team/sathish.jpg", // Path to your image in /public
       desc: "Lead Structural Consultant with 25 years of site-level expertise." 
     },
     { 
       name: "Asha Shenoy", 
       role: "Senior Designer", 
-      image: "/asha.jpg",
+      image: "/team/asha.jpg",
       desc: "Expert in STAAD.Pro and ETABS structural modeling and analysis." 
     },
     { 
@@ -123,24 +123,32 @@ export default function AboutPage() {
       {/* SECTION 3: THE TEAM */}
       <section className="container mx-auto px-6">
         <h2 className="text-4xl font-black uppercase mb-16 italic">The <span className="text-engineering-yellow">Team</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {team.map((member, i) => (
-            <div key={i} className="group">
-              {/* Image Container */}
-              <div className="aspect-[3/4] bg-slate-900 border border-white/10 mb-6 flex items-center justify-center relative overflow-hidden">
-                <Image 
-                   src={member.image} 
-                   alt={member.name}
-                   fill
-                   className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                />
-                <div className="absolute top-4 left-4 text-[10px] font-bold uppercase text-engineering-yellow opacity-40 z-10">
-                  Sigma Consultants
+            <div key={i} className="group text-center"> {/* Added text-center for circular alignment */}
+              
+              {/* Circular Image Container */}
+              <div className="relative w-80 h-80 mx-auto mb-8"> {/* Fixed width/height for perfect circle */}
+                <div className="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-engineering-yellow/50 transition-colors duration-500 z-10"></div>
+                
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900">
+                  <Image 
+                     src={member.image} 
+                     alt={member.name}
+                     fill
+                     className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  />
+                </div>
+
+                {/* Floating Label - Adjusted for circle */}
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-engineering-bg px-3 py-1 border border-white/10 text-[8px] font-bold uppercase text-engineering-yellow z-20">
+                  Sigma 
                 </div>
               </div>
+
               <h4 className="text-xl font-black uppercase mb-1">{member.name}</h4>
               <p className="text-engineering-yellow text-xs font-bold uppercase mb-3">{member.role}</p>
-              <p className="text-slate-500 text-sm leading-relaxed">{member.desc}</p>
+              <p className="text-slate-500 text-sm leading-relaxed px-4">{member.desc}</p>
             </div>
           ))}
         </div>
