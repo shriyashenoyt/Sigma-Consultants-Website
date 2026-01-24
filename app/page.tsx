@@ -40,7 +40,7 @@ export default function Home() {
         </h1>
 
           <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
-            Sigma Consultants delivers structural engineering excellence through 
+            Sigma Consultants delivers structural engineering solutions through 
             mathematical precision and future-proof infrastructure design.
           </p>
 

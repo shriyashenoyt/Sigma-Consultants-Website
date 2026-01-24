@@ -34,7 +34,7 @@ export default function AboutPage() {
       
       {/* SECTION 1: THE STORY & STATS */}
       <section className="container mx-auto px-6 mb-32">
-        <div className="flex flex-col lg:flex-row gap-16 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
           
           {/* Text Content */}
           <div className="lg:w-1/2 flex flex-col justify-center">
@@ -43,10 +43,10 @@ export default function AboutPage() {
             </h1>
             <div className="space-y-6 text-slate-400 text-lg leading-relaxed">
               <p>
-                Founded in 2002, Sigma Consultants began as a small family-run structural enterprise. Today, we stand in our <span className="text-white font-bold italic">25th Year</span> of excellence.
+                Founded in 2002, Sigma Consultants began as a small family-run structural enterprise. Today, we stand in our <span className="text-white font-bold italic">25th Year</span> of trusted service.
               </p>
               <p>
-                Run by a dedicated husband-and-wife duo, our office has evolved into a global consultancy firm. While our roots are in India, our structural footprints are seen in commercial and industrial landmarks worldwide.
+                Run by a dedicated husband-and-wife duo, our office has evolved into a global consultancy firm. While our roots are in India, our structural footprints extend across commercial and industrial landmarks worldwide.
               </p>
               <p>
                 We don't just design; we inspect. Every project benefits from the Managing Director's personal on-site involvement, ensuring that what is planned on software is executed with 100% integrity on the field.
@@ -54,36 +54,49 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Corrected Stats Grid - Forced Layout Stability */}
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[400px]">
+          {/* Hexagon Stats Grid */}
+          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8 py-10">
             
-            {/* Box 1: Years of Service */}
-            <div className="group relative flex flex-col items-center justify-center p-12 border border-white/10 bg-slate-950 overflow-hidden">
+            {/* Hexagon 1: Years of Service */}
+            <div className="group relative w-84 h-84 mx-auto cursor-pointer transition-all duration-500 hover:-translate-y-4">
+              {/* The Hexagon Shape using clip-path */}
               <div 
-                className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-50 group-hover:opacity-30 transition-opacity duration-700"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000')" }}
-              ></div>
-              <div className="absolute inset-0 z-[1] bg-engineering-bg/60"></div>
-              
-              <div className="relative z-10 text-center">
-                <Award className="text-engineering-yellow mx-auto mb-6 group-hover:scale-110 transition-transform duration-500" size={54} />
-                <p className="text-6xl font-black mb-2 leading-none text-white">25</p>
-                <p className="text-xs uppercase font-bold text-slate-400">Years of Service</p>
+                className="absolute inset-0 bg-slate-900 border-2 border-white/10 transition-all duration-500 group-hover:border-engineering-yellow/50"
+                style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+              >
+                {/* Background Image with Zoom Effect */}
+                <div 
+                  className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-40 transition-transform duration-700 group-hover:scale-125 group-hover:opacity-20"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000')" }}
+                ></div>
+                <div className="absolute inset-0 z-[1] bg-engineering-bg/60"></div>
+                
+                {/* Content */}
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+                  <Award className="text-engineering-yellow mb-2 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" size={44} />
+                  <p className="text-5xl font-black leading-none text-white">25</p>
+                  <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-2">Years of Service</p>
+                </div>
               </div>
             </div>
 
-            {/* Box 2: Global Projects */}
-            <div className="group relative flex flex-col items-center justify-center p-12 border border-white/10 bg-slate-950 overflow-hidden">
+            {/* Hexagon 2: Global Projects */}
+            <div className="group relative w-84 h-84 mx-auto cursor-pointer transition-all duration-500 hover:-translate-y-4">
               <div 
-                className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-50 group-hover:opacity-30 transition-opacity duration-700"
-                style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}
-              ></div>
-              <div className="absolute inset-0 z-[1] bg-engineering-bg/60"></div>
+                className="absolute inset-0 bg-slate-900 border-2 border-white/10 transition-all duration-500 group-hover:border-engineering-yellow/50"
+                style={{ clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)' }}
+              >
+                <div 
+                  className="absolute inset-0 z-0 bg-cover bg-center grayscale opacity-40 transition-transform duration-700 group-hover:scale-125 group-hover:opacity-20"
+                  style={{ backgroundImage: "url('https://plus.unsplash.com/premium_photo-1661335257817-4552acab9656?q=80&w=1171')" }}
+                ></div>
+                <div className="absolute inset-0 z-[1] bg-engineering-bg/60"></div>
 
-              <div className="relative z-10 text-center">
-                <Globe className="text-engineering-yellow mx-auto mb-6 group-hover:scale-110 transition-transform duration-500" size={54} />
-                <p className="text-6xl font-black mb-2 leading-none text-white">10K+</p>
-                <p className="text-xs uppercase font-bold text-slate-400">Global Projects</p>
+                <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+                  <Globe className="text-engineering-yellow mb-2 transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]" size={44} />
+                  <p className="text-5xl font-black leading-none text-white">10K+</p>
+                  <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-2">Projects</p>
+                </div>
               </div>
             </div>
           </div> 
