@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import PageTransition from "@/components/PageTransition"; // Import the transition wrapper
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-engineering-black text-white`}>
         <Navbar />
-        {children}
+        {/* Wrapping children ensures every page uses the same entrance animation */}
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );
