@@ -42,10 +42,10 @@ export default function SectorBlocks() {
       img: "/projects/government-bg.jpg" 
     },
     { 
-      title: "Temples", 
+      title: "Institutional", 
       count: "200+", 
       desc: "Heritage & Sacred", 
-      path: "/projects/temples",
+      path: "/projects/institutional",
       img: "/projects/temple-bg.jpg" 
     },
   ];

@@ -3,10 +3,10 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const projects = [
-  { id: 1, title: "Dhimapur Church", img: "/projects/industrial/industrial_main.png" },
-//   { id: 2, title: "Premamrutham Pink Skies", img: "/projects/institutional/premamrutham-pink-skies.jpg" },
-//   { id: 3, title: "Royal Concord", img: "/projects/institutional/Royal_Concord.jpg.jpeg" },
-//   { id: 4, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
+  { id: 1, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
+  { id: 2, title: "Premamrutham Pink Skies", img: "/projects/institutional/premamrutham-pink-skies.jpg" },
+  { id: 3, title: "Royal Concord", img: "/projects/institutional/Royal_Concord.jpg.jpeg" },
+  { id: 4, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
 ];
 
 export default function InstitutionalGallery() {
@@ -32,7 +32,7 @@ export default function InstitutionalGallery() {
             Sector Overview
           </motion.p>
           <h2 className="text-6xl md:text-7xl font-black uppercase italic text-white">
-            Industrial <span className="text-engineering-yellow">Projects</span>
+            Institutional <span className="text-engineering-yellow">Projects</span>
           </h2>
         </div>
 

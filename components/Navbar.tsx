@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const projectCategories = [
     { name: 'Overview', href: '/projects' },
-    { name: 'Temples', href: '/projects/temples' },
+    { name: 'Institutional', href: '/projects/institutional' },
     { name: 'Government', href: '/projects/government' },
     { name: 'Residential', href: '/projects/residential' },
     { name: 'Commercial', href: '/projects/commercial' },
