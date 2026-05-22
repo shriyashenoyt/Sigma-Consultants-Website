@@ -1,4 +1,4 @@
-import { History, Award, Users, HardHat, Cpu, Globe } from 'lucide-react';
+import { History, Award, Users, HardHat, Cpu, Globe, User } from 'lucide-react';
 import Image from 'next/image'; // Import Next.js Image component
 
 export default function AboutPage() {
@@ -6,25 +6,25 @@ export default function AboutPage() {
     { 
       name: "Sathish Shenoy", 
       role: "Managing Director", 
-      image: "/team/sathish.jpg", // Path to your image in /public
+      image: "/team/sathish.jpeg", // Path to your image in /public
       desc: "Lead Structural Consultant with 25 years of site-level expertise." 
     },
     { 
       name: "Asha Shenoy", 
       role: "Senior Designer", 
-      image: "/team/asha.jpg",
+      image: "/team/asha.png",
       desc: "Expert in STAAD.Pro and ETABS structural modeling and analysis." 
     },
     { 
       name: "Devraj Hosahallu", 
       role: "Site Engineer", 
-      image: "/team/devraj.jpg",
+      image: "",
       desc: "Specializing in high-rise residential structural design." 
     },
     { 
       name: "Narendra", 
       role: "Site Engineer", 
-      image: "/team/narendra.jpg",
+      image: "",
       desc: "Expert in AutoCAD technical detailing and blueprint drafting." 
     },
   ];
@@ -134,38 +134,50 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION 3: THE TEAM */}
-      <section className="container mx-auto px-6">
-        <h2 className="text-4xl font-black uppercase mb-16 italic">The <span className="text-engineering-yellow">Team</span></h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {team.map((member, i) => (
-            <div key={i} className="group text-center"> {/* Added text-center for circular alignment */}
-              
-              {/* Circular Image Container */}
-              <div className="relative w-80 h-80 mx-auto mb-8"> {/* Fixed width/height for perfect circle */}
-                <div className="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-engineering-yellow/50 transition-colors duration-500 z-10"></div>
-                
-                <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900">
-                  <Image 
-                     src={member.image} 
-                     alt={member.name}
-                     fill
-                     className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                  />
-                </div>
-
-                {/* Floating Label - Adjusted for circle */}
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-engineering-bg px-3 py-1 border border-white/10 text-[8px] font-bold uppercase text-engineering-yellow z-20">
-                  Sigma 
-                </div>
+<section className="container mx-auto px-6">
+  <h2 className="text-4xl font-black uppercase mb-16 italic">The <span className="text-engineering-yellow">Team</span></h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    {team.map((member, i) => (
+      <div key={i} className="group text-center">
+        
+        {/* Circular Image Container */}
+        <div className="relative w-80 h-80 mx-auto mb-8">
+          <div className="absolute inset-0 rounded-full border-2 border-white/10 group-hover:border-engineering-yellow/50 transition-colors duration-500 z-10"></div>
+          
+          <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
+            {member.image ? (
+              // If image path exists, render the photo
+              <Image 
+                src={member.image} 
+                alt={member.name}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+              />
+            ) : (
+              // Silhouette Placeholder: Renders if image is an empty string ("")
+              <div className="w-full h-full bg-slate-950 flex items-center justify-center text-slate-700 group-hover:text-engineering-yellow/40 transition-colors duration-500 pt-12">
+                <User 
+                  size={220} 
+                  strokeWidth={1} 
+                  className="transform translate-y-4 transition-transform duration-700 group-hover:scale-105" 
+                />
               </div>
+            )}
+          </div>
 
-              <h4 className="text-xl font-black uppercase mb-1">{member.name}</h4>
-              <p className="text-engineering-yellow text-xs font-bold uppercase mb-3">{member.role}</p>
-              <p className="text-slate-500 text-sm leading-relaxed px-4">{member.desc}</p>
-            </div>
-          ))}
+          {/* Floating Label */}
+          <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-engineering-bg px-3 py-1 border border-white/10 text-[8px] font-bold uppercase text-engineering-yellow z-20">
+            Sigma 
+          </div>
         </div>
-      </section>
+
+        <h4 className="text-xl font-black uppercase mb-1">{member.name}</h4>
+        <p className="text-engineering-yellow text-xs font-bold uppercase mb-3">{member.role}</p>
+        <p className="text-slate-500 text-sm leading-relaxed px-4">{member.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
     </main>
   );
 }

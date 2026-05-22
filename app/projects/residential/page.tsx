@@ -1,80 +1,121 @@
 'use client'
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { MapPin, Home } from 'lucide-react';
 
-const projects = [
-  { id: 1, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/residential/c4167fa8-813c-4a89-ba91-1a2dc1733c94.jpg" },
-  { id: 2, title: "Soundarya Kamakshi Apartment", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
-  { id: 3, title: "Sigma Heights Tower", img: "/projects/residential/Elite_Belathur.jpg.jpeg" },
-  { id: 4, title: "KVG Medical College", img: "/projects/residential/Elite_Horamavu.jpg.jpeg" },
-  { id: 5, title: "SDM Institute of Technology", img: "/projects/residential/Hitesh_Jakkuru.jpg.jpeg" },
-  { id: 6, title: "SDM Institute of Technology", img: "/projects/residential/Soundarya_Kamakshi.JPG.jpeg" },
-  // ... Keep adding until you reach 20+
-];
+export default function ResidentialGallery() {
+  // 1. Featured items with photos (Displayed in a clean 2-column grid layout)
+  const featuredProjects = [
+    { id: 1, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/residential/c4167fa8-813c-4a89-ba91-1a2dc1733c94.jpg" },
+    { id: 2, title: "Soundarya Kamakshi Apartment", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
+    { id: 3, title: "Sigma Heights Tower", img: "/projects/residential/Elite_Belathur.jpg.jpeg" },
+    { id: 4, title: "KVG Medical College", img: "/projects/residential/residential-bg.jpeg" },
+    { id: 5, title: "SDM Institute of Technology", img: "/projects/residential/Hitesh_Jakkuru.jpg.jpeg" },
+    { id: 6, title: "SDM Institute of Technology", img: "/projects/residential/Soundarya_Kamakshi.JPG.jpeg" },
+  ];
 
-export default function InstitutionalGallery() {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: targetRef });
-
-  // Adjust -95% based on how many projects you eventually add. 
-  // More projects = larger negative number.
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-95%"]);
+  // 2. Comprehensive data directory for other residential project logs (No photos)
+  const projectLog = [
+    { name: "Elite Belathur Residential Enclave", location: "Whitefield, Bengaluru" },
+    { name: "Green Meadows Premium Villas", location: "Mangaluru, Karnataka" },
+    { name: "Skyline Vista Multi-Storey Apartments", location: "Chennai, Tamil Nadu" },
+    { name: "High-Rise Residential Group Housing", location: "Mysuru, Karnataka" },
+    { name: "Vaibhav Co-operative Housing Society", location: "Udupi, Karnataka" },
+  ];
 
   return (
-    <section ref={targetRef} className="relative h-[800vh] bg-engineering-bg">
-      <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+    <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24">
+      <div className="container mx-auto px-6 max-w-6xl">
         
-        {/* Floating Heading */}
-        <div className="container mx-auto px-12 mb-12">
-          <motion.p 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="text-engineering-yellow text-xs font-black uppercase tracking-[0.5em] mb-2"
-          >
-            Sector Overview
-          </motion.p>
-          <h2 className="text-6xl md:text-7xl font-black uppercase italic text-white">
+        {/* ================= HEADER SECTION ================= */}
+        <div className="mb-20">
+          <p className="text-engineering-yellow text-xs font-black uppercase tracking-[0.5em] mb-2">
+            Sector Portfolio
+          </p>
+          <h1 className="text-5xl md:text-7xl font-black uppercase italic text-white">
             Residential <span className="text-engineering-yellow">Projects</span>
+          </h1>
+          <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
+            Safe, load-optimized structural engineering for modern living frameworks. Our portfolio 
+            ranges from multi-storey apartment towers to low-rise luxury housing units engineered for seismic safety.
+          </p>
+        </div>
+
+        {/* ================= PART 1: VISUAL TABULAR GRID (2 Columns) ================= */}
+        <div className="mb-28">
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
+            <Home size={14} className="text-engineering-yellow" /> Featured Residences
           </h2>
-        </div>
-
-        <motion.div style={{ x }} className="flex gap-10 items-center">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              whileHover={{ width: "750px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="group relative h-[500px] w-[500px] flex-shrink-0 overflow-hidden bg-slate-900 border border-white/10"
-            >
-              {/* Image with Ken Burns zoom effect */}
-              <motion.div
-                whileHover={{ scale: 1.15 }}
-                transition={{ duration: 0.8 }}
-                className="absolute inset-0 z-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${project.img})` }}
-              />
-              
-              {/* Bottom Title Bar */}
-              <div className="absolute inset-x-0 bottom-0 z-10 h-28 bg-gradient-to-t from-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex items-end p-8">
-                <p className="text-2xl font-black uppercase italic text-white tracking-wider leading-tight">
-                  {project.title}
-                </p>
-              </div>
-            </motion.div>
-          ))}
           
-          {/* End Spacer so the last image doesn't get cut off */}
-          <div className="w-[500px] flex-shrink-0" />
-        </motion.div>
-
-        {/* Visual Progress Bar for 20+ items */}
-        <div className="absolute bottom-10 left-12 right-12 h-[1px] bg-white/10">
-          <motion.div 
-            style={{ scaleX: scrollYProgress }} 
-            className="h-full bg-engineering-yellow origin-left"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featuredProjects.map((project, i) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="group relative h-[380px] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-8"
+              >
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${project.img})` }}
+                />
+                
+                {/* Dark Vignette Overlay for permanent text readability */}
+                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                
+                {/* Fixed Label Content */}
+                <div className="relative z-10">
+                  <span className="text-engineering-yellow text-[10px] font-mono tracking-widest block mb-1">
+                    FRAMEWORK STRUCTURE 0{project.id}
+                  </span>
+                  <h3 className="text-2xl font-black uppercase italic text-white tracking-tight">
+                    {project.title}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
+
+        {/* ================= PART 2: COMPREHENSIVE REGISTRY (2 Columns Table) ================= */}
+        <div>
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
+            <MapPin size={14} className="text-engineering-yellow" /> Housing & Towers Directory
+          </h2>
+
+          {/* Table Header Wrapper */}
+          <div className="grid grid-cols-2 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow">
+            <div>Residential Complex / Developer</div>
+            <div className="text-right md:text-left">Project Location</div>
+          </div>
+
+          {/* Table Row Content */}
+          <div className="divide-y divide-white/5">
+            {projectLog.map((log, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="grid grid-cols-2 py-5 items-center text-sm hover:bg-white/[0.02] transition-colors px-1"
+              >
+                {/* Column 1: Project Name */}
+                <div className="font-bold uppercase text-white tracking-tight pr-4">
+                  {log.name}
+                </div>
+                
+                {/* Column 2: Location */}
+                <div className="text-slate-400 text-xs md:text-sm font-medium text-right md:text-left tracking-wide">
+                  {log.location}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
-    </section>
+    </main>
   );
 }

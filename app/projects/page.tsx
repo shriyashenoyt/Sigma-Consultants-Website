@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 export default function ProjectsPage() {
   const categories = [
-    { title: "Industrial", img: "/projects/industrial/industrial_main.png" },
+    { title: "Industrial", img: "/projects/industrial/industrial-bg.png" },
     { title: "Commercial", img: "/projects/commercial/58cdba53-fded-4c54-b7a6-be0572e77606.jpg" },
     { title: "Residential", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
-    { title: "Government", img: "/projects/government-bg.jpg" },
+    { title: "Government", img: "/projects/government/government-bg.jpg" },
     { title: "Institutional", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
   ];
 
