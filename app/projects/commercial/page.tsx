@@ -3,21 +3,21 @@ import { motion } from 'framer-motion';
 import { MapPin, Building2 } from 'lucide-react';
 
 export default function CommercialGallery() {
-  // 1. Featured items with photos (Displayed in a 2-column grid layout)
+  // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    { id: 1, title: "Dhimapur Church", img: "/projects/commercial/58cdba53-fded-4c54-b7a6-be0572e77606.jpg" },
-    { id: 2, title: "Premamrutham Pink Skies", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
-    { id: 3, title: "Royal Concord", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
+    { id: 1, title: "Premamrutham Pink Skies", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
+    { id: 2, title: "Royal Concord", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
   ];
 
-  // 2. Comprehensive project logs (No photos, displayed in a clean 2-column list table)
+  // 2. Comprehensive Data Directory extracted from your official logs
   const projectLog = [
-    { name: "Sathish Shenoy Commercial Complex", location: "Mangaluru, Karnataka" },
-    { name: "Apex Industrial Warehouse Hub", location: "Chennai, Tamil Nadu" },
-    { name: "Sigma Corporate Headquarters", location: "Bengaluru, Karnataka" },
-    { name: "Kamakshi Retail Arcade", location: "Udupi, Karnataka" },
-    { name: "Narendra Residential Enclave", location: "Kochi, Kerala" },
-    { name: "Devraj Infrastructure Depot", location: "Hyderabad, Telangana" },
+    { name: "GMR Guest House at Tirumala", year: "2007-08", client: "M/S GMR Group" },
+    { name: "Training Institute at Mysore, Kannapuram & Gaziabad", year: "2009", client: "M/S Rudset" },
+    { name: "Training Institute at Vettapalyam, Baran, Beharampur & Bilwara", year: "2011", client: "M/S Rudset" },
+    { name: "Proposed Club House at Gulbarga", year: "2020", client: "Gescom" },
+    { name: "Sathish Shenoy Commercial Complex", year: "2022", client: "Private Developer" },
+    { name: "Sigma Corporate Headquarters", year: "2024", client: "Sigma Consultants" },
+    { name: "Kamakshi Retail Arcade", year: "2023", client: "Private Trust" },
   ];
 
   return (
@@ -77,19 +77,20 @@ export default function CommercialGallery() {
           </div>
         </div>
 
-        {/* ================= PART 2: TOTAL COMPREHENSIVE REGISTRY (2 Columns Table) ================= */}
+        {/* ================= PART 2: 3-COLUMN MASTER DATA MATRIX ================= */}
         <div>
           <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
-            <MapPin size={14} className="text-engineering-yellow" /> Project Directory Logs
+            <MapPin size={14} className="text-engineering-yellow" /> Official Project Registry
           </h2>
 
-          {/* Table Header Wrapper */}
-          <div className="grid grid-cols-2 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow">
-            <div>Project Title / Classification</div>
-            <div className="text-right md:text-left">Structural Location</div>
+          {/* 3-Column Header Track with matching column configurations */}
+          <div className="grid grid-cols-12 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow gap-4">
+            <div className="col-span-6 md:col-span-7">Project Description / Classification</div>
+            <div className="col-span-3 md:col-span-2 text-center md:text-left">Year</div>
+            <div className="col-span-3 text-right md:text-left">Client / Corporate Entity</div>
           </div>
 
-          {/* Table Row Content */}
+          {/* Data Log Row Component Output Loop */}
           <div className="divide-y divide-white/5">
             {projectLog.map((log, index) => (
               <motion.div 
@@ -97,16 +98,22 @@ export default function CommercialGallery() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-2 py-5 items-center text-sm hover:bg-white/[0.02] transition-colors px-1"
+                className="grid grid-cols-12 py-4 items-center text-xs md:text-sm hover:bg-white/[0.02] transition-colors gap-4 px-1"
               >
-                {/* Column 1: Project Name */}
-                <div className="font-bold uppercase text-white tracking-tight pr-4">
+                {/* Column 1: Row Counter + Project Name */}
+                <div className="col-span-6 md:col-span-7 font-bold uppercase text-white tracking-tight leading-tight pr-2">
+                  <span className="text-slate-600 font-mono text-[11px] mr-2 inline-block w-6">{index + 1}.</span>
                   {log.name}
                 </div>
                 
-                {/* Column 2: Location */}
-                <div className="text-slate-400 text-xs md:text-sm font-medium text-right md:text-left tracking-wide">
-                  {log.location}
+                {/* Column 2: Fiscal Execution Window */}
+                <div className="col-span-3 md:col-span-2 text-slate-400 font-mono text-center md:text-left tracking-wide">
+                  {log.year}
+                </div>
+
+                {/* Column 3: Corporate Client Stakeholder */}
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                  {log.client}
                 </div>
               </motion.div>
             ))}

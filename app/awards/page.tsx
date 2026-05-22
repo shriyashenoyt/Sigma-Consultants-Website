@@ -14,7 +14,7 @@ export default function AwardsPage() {
     },
     { 
       title: "10,000 Projects Milestone", 
-      year: "2024", 
+      year: "2025", 
       category: "Project Delivery", 
       icon: <Milestone size={32} />,
       img: "/projects/awards/muddenhalli.jpeg",
@@ -46,7 +46,7 @@ export default function AwardsPage() {
     },
     { 
       title: "Visionary Structural Engineer", 
-      year: "2012", 
+      year: "2026", 
       category: "Individual Design", 
       icon: <Eye size={32} />,
       img: "/projects/awards/swami2-p.jpeg",

@@ -5,7 +5,7 @@ export default function AboutPage() {
   const team = [
     { 
       name: "Sathish Shenoy", 
-      role: "Managing Director", 
+      role: "Proprietor & Managing Director", 
       image: "/team/sathish.jpeg", // Path to your image in /public
       desc: "Lead Structural Consultant with 25 years of site-level expertise." 
     },
@@ -17,13 +17,13 @@ export default function AboutPage() {
     },
     { 
       name: "Devraj Hosahallu", 
-      role: "Site Engineer", 
+      role: "Project Engineer", 
       image: "",
       desc: "Specializing in high-rise residential structural design." 
     },
     { 
       name: "Narendra", 
-      role: "Site Engineer", 
+      role: "Project Engineer", 
       image: "",
       desc: "Expert in AutoCAD technical detailing and blueprint drafting." 
     },

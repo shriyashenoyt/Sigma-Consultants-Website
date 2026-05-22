@@ -3,19 +3,20 @@ import { motion } from 'framer-motion';
 import { MapPin, Factory } from 'lucide-react';
 
 export default function IndustrialGallery() {
-  // 1. Featured items with photos (Displayed in a 2-column grid layout)
+  // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    { id: 1, title: "Dhimapur Church", img: "/projects/industrial/industrial-bg.png" },
+    { id: 1, title: "Industrial Plant Layout", img: "/projects/industrial/industrial-bg.png" },
   ];
 
-  // 2. Comprehensive structural data log for other industrial projects (No photos)
+  // 2. Comprehensive Industrial Data Directory extracted from your official logs
   const projectLog = [
-    { name: "Heavy Engineering Manufacturing Plant", location: "Peenya, Bengaluru" },
-    { name: "Automobile Assembly Unit Framework", location: "Sriperumbudur, Chennai" },
-    { name: "Pharma Formulation Warehouse", location: "Hyderabad, Telangana" },
-    { name: "Steel Rolling Mill Shed", location: "Bellary, Karnataka" },
-    { name: "Logistics & Cold Storage Depot", location: "Hosur, Tamil Nadu" },
-    { name: "Power Substation Structural Base", location: "Belagavi, Karnataka" },
+    { name: "2 MW Hydro Power Plant at Sringeri", year: "2006-07", client: "M/S Chescom" },
+    { name: "0.8 MW Hydro Power Plant Raichur", year: "2005", client: "M/S Gescom" },
+    { name: "Enaltech Lab at Ambernath Mumbai", year: "-", client: "-" },
+    { name: "Heavy Engineering Manufacturing Plant", year: "2021", client: "Private Operator" },
+    { name: "Automobile Assembly Unit Framework", year: "2023", client: "M/S Automotive Ltd" },
+    { name: "Steel Rolling Mill Shed", year: "2019", client: "Steel Processing Corp" },
+    { name: "Logistics & Cold Storage Depot", year: "2022", client: "SupplyChain Logistics" },
   ];
 
   return (
@@ -75,19 +76,20 @@ export default function IndustrialGallery() {
           </div>
         </div>
 
-        {/* ================= PART 2: COMPREHENSIVE INDUSTRIAL REGISTRY (2 Columns Table) ================= */}
+        {/* ================= PART 2: 3-COLUMN MASTER DATA MATRIX ================= */}
         <div>
           <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
             <MapPin size={14} className="text-engineering-yellow" /> Plant & Warehouse Directory
           </h2>
 
-          {/* Table Header Wrapper */}
-          <div className="grid grid-cols-2 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow">
-            <div>Industrial Asset / Classification</div>
-            <div className="text-right md:text-left">Project Location</div>
+          {/* 3-Column Header Track */}
+          <div className="grid grid-cols-12 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow gap-4">
+            <div className="col-span-6 md:col-span-7">Industrial Asset / Classification</div>
+            <div className="col-span-3 md:col-span-2 text-center md:text-left">Year</div>
+            <div className="col-span-3 text-right md:text-left">Client / Operator Company</div>
           </div>
 
-          {/* Table Row Content */}
+          {/* Data Log Row Component Output Loop */}
           <div className="divide-y divide-white/5">
             {projectLog.map((log, index) => (
               <motion.div 
@@ -95,16 +97,22 @@ export default function IndustrialGallery() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-2 py-5 items-center text-sm hover:bg-white/[0.02] transition-colors px-1"
+                className="grid grid-cols-12 py-4 items-center text-xs md:text-sm hover:bg-white/[0.02] transition-colors gap-4 px-1"
               >
-                {/* Column 1: Project Name */}
-                <div className="font-bold uppercase text-white tracking-tight pr-4">
+                {/* Column 1: Row Counter + Project Asset Name */}
+                <div className="col-span-6 md:col-span-7 font-bold uppercase text-white tracking-tight leading-tight pr-2">
+                  <span className="text-slate-600 font-mono text-[11px] mr-2 inline-block w-6">{index + 1}.</span>
                   {log.name}
                 </div>
                 
-                {/* Column 2: Location */}
-                <div className="text-slate-400 text-xs md:text-sm font-medium text-right md:text-left tracking-wide">
-                  {log.location}
+                {/* Column 2: Implementation Year */}
+                <div className="col-span-3 md:col-span-2 text-slate-400 font-mono text-center md:text-left tracking-wide">
+                  {log.year}
+                </div>
+
+                {/* Column 3: Corporate Client Stakeholder */}
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                  {log.client}
                 </div>
               </motion.div>
             ))}
