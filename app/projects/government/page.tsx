@@ -5,27 +5,25 @@ import { MapPin, ShieldAlert } from 'lucide-react';
 export default function GovernmentGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    { id: 1, title: "MG Metro Station Bengaluru", img: "/projects/government/government-bg.jpg" },
-    { id: 2, title: "PMAY - Mysore & Chikamagalur", img: "/projects/government/pmay-mysore.jpg" },
+    { id: 1, title: "MG Road Boulevard - Bengaluru", img: "/projects/government/government-bg.jpg" },
+    //{ id: 2, title: "PMAY - Mysore & Chikamagalur", img: "/projects/government/pmay-mysore.jpg" },
   ];
 
-  // 2. Comprehensive Data Directory extracted from your official government logs
+  // 2. Full Consolidated Government Registry (9 entries matching your official logs)
   const projectLog = [
     { name: "Cricket Stadium at Shimogga Phase 1", year: "2009", client: "KSCA" },
     { name: "Cricket Stadium at Aluru, Bangalore Phase 1", year: "2007-08", client: "KSCA" },
     { name: "Indoor Stadium, Nagaland", year: "2012", client: "Govt. of Nagaland" },
     { name: "Outdoor Shooting Range, Chikmagalur", year: "2011", client: "District Rifle & Shotgun Association" },
-    { name: "MG Road Boulevard Bangalore-Revitalisation", year: "2011", client: "Namma Metro Bangalore" },
+    { name: "MG Road Boulevard Bangalore - Revitalisation", year: "2011", client: "Namma Metro Bangalore" },
     { name: "ED & AIDS Hospital at Bangalore", year: "2012", client: "Namma Metro Bangalore" },
     { name: "Yathri Nivas at Kanakagiri, Sindhanoor", year: "2010", client: "Karnataka Tourism Department" },
     { name: "Yathri Nivas at Dharmasla, Madhyapradesh", year: "2010", client: "Karnataka Tourism Department" },
-    { name: "Training Institute at Mysore, Kannapuram & Gaziabad", year: "2009", client: "M/S Rudset" },
-    { name: "Training Institute at Vettapalyam, Baran, Beharampur & Bilwara", year: "2011", client: "M/S Rudset" },
     { name: "Bus Stand Building at Chitaguppa", year: "2012", client: "M/S KSRTC" },
     { name: "Zilla Panchayath Office at Chiitur", year: "2012", client: "Govt. of Andhra Pradesh" },
     { name: "Dr. B. R. Ambedkar Bhavan at Wadi", year: "2019-20", client: "Karmika Elakhe, Govt. of Karnataka" },
-    { name: "Quarantine and Isolation Facility, on Airport Road, Bangalore", year: "-", client: "M/S CPWD" },
-    { name: "Marina Beach Heritage, Chennai", year: "2025", client: "Govt. of Tamil Nadu" },
+    { name: "Pradhan Mantri Awaz Yojana, Tumkur, Mysore, Chikmangalore", year: "2021", client: "GOI" },
+    { name: "Marina Beach Heritage, Chennai / Marina Beach Chennai, Tamilnadu", year: "2025", client: "Govt. of Tamilnadu / Chennai Metropolitan Dev. Authority" }
   ];
 
   return (
@@ -41,8 +39,8 @@ export default function GovernmentGallery() {
             Government <span className="text-engineering-yellow">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
-            High-compliance public infrastructure and civic foundations designed to meticulous 
-            government standards, combining structural resilience with absolute regulatory accuracy.
+            High-compliance public infrastructure, urban transportation links, and civic landmarks built 
+            to rigorous government standards and strict structural safety mandates.
           </p>
         </div>
 
@@ -120,7 +118,7 @@ export default function GovernmentGallery() {
                 </div>
 
                 {/* Column 3: Issuing Agency/Department */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
                   {log.client}
                 </div>
               </motion.div>

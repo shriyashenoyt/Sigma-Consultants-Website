@@ -5,19 +5,41 @@ import { MapPin, Building2 } from 'lucide-react';
 export default function CommercialGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    { id: 1, title: "Premamrutham Pink Skies", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
-    { id: 2, title: "Royal Concord", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
+    //{ id: 1, title: "Premamrutham Pink Skies", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
+    { id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
   ];
 
-  // 2. Comprehensive Data Directory extracted from your official logs
+  // 2. Full Consolidated Commercial Registry (29 entries matching your official logs)
   const projectLog = [
-    { name: "GMR Guest House at Tirumala", year: "2007-08", client: "M/S GMR Group" },
+    { name: "Convention Centre at Channa Patna", year: "-", client: "-" },
+    { name: "Jain Convention Hall Tumkur", year: "-", client: "-" },
+    { name: "SDM Convention Hall-Beltangadi", year: "-", client: "-" },
+    { name: "Additions & Alterations to Existing SDM Convention Centre, Bangalore", year: "-", client: "-" },
+    { name: "Soofi Convention Hall-Talpady Mangalore", year: "-", client: "-" },
+    { name: "KVN Convention Hall-Dodda Ballapura", year: "-", client: "-" },
+    { name: "TUR Convention Hall-Tumkur", year: "-", client: "-" },
+    { name: "KLE Convention Centre Belagavi", year: "-", client: "-" },
+    { name: "KABA Convention Centre at Kolar", year: "-", client: "-" },
+    { name: "Shadi Mahal at Vainambadi Tamilnadu", year: "-", client: "-" },
+    { name: "Sri Sudheendra Convention Hall at Ananthnagar Bangalore", year: "-", client: "-" },
+    { name: "Durga Convention Hall (White Palace) Kegeri", year: "-", client: "-" },
+    { name: "Convention Hall at Sri Kakulam, Andra Pradesh", year: "-", client: "-" },
+    { name: "Convention Hall at Salem for Sri Iskcon Temple", year: "-", client: "-" },
+    { name: "Convention Hall for DKV Sangha Yelahanka, Bangalore", year: "-", client: "-" },
+    { name: "Rajangana Multi Purpose Hall at Ananth Nagara, Bangalore", year: "-", client: "-" },
+    { name: "Premamrutham Multi Purpose Hall at Muddenahalli, Chikkaballapura", year: "-", client: "-" },
+    { name: "Music Studio at Marathahalli, Bangalore", year: "-", client: "-" },
+    { name: "Event Space Project at Mysore", year: "-", client: "-" },
     { name: "Training Institute at Mysore, Kannapuram & Gaziabad", year: "2009", client: "M/S Rudset" },
     { name: "Training Institute at Vettapalyam, Baran, Beharampur & Bilwara", year: "2011", client: "M/S Rudset" },
+    { name: "Function Hall at Basava Kalyana", year: "2019-20", client: "Mujarai Elakhe, Govt. of Karnataka" },
     { name: "Proposed Club House at Gulbarga", year: "2020", client: "Gescom" },
-    { name: "Sathish Shenoy Commercial Complex", year: "2022", client: "Private Developer" },
-    { name: "Sigma Corporate Headquarters", year: "2024", client: "Sigma Consultants" },
-    { name: "Kamakshi Retail Arcade", year: "2023", client: "Private Trust" },
+    { name: "Bangalore Club - Additions and Alterations", year: "-", client: "M/S Bangalore Club" },
+    { name: "Gulbarga Club - Additions and Alterations", year: "-", client: "M/S Gulbarga Club" },
+    { name: "SDM Kalyana Mantapa at Belthangadi", year: "2010", client: "M/S SDM Society" },
+    { name: "Sahyadri Guest House building at Sri Dharmasthala", year: "2014", client: "M/S SDM SOCIETY" },
+    { name: "Soofi Convention Centre at Talapady, Mangalore", year: "-", client: "-" },
+    { name: "Mall of Bangalore at Electronic City", year: "2021-22", client: "-" }
   ];
 
   return (
@@ -33,8 +55,8 @@ export default function CommercialGallery() {
             Commercial <span className="text-engineering-yellow">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
-            A curated cross-section of our structural blueprints, highlighting both featured landmark 
-            developments and our complete regional consulting history.
+            From modern steel clear-span convention halls to multi-storey corporate headquarters, our 
+            commercial blueprints optimize functional square-footage while matching rigid building code compliance metrics.
           </p>
         </div>
 
@@ -60,7 +82,7 @@ export default function CommercialGallery() {
                   style={{ backgroundImage: `url(${project.img})` }}
                 />
                 
-                {/* Dark Vignette Overlay for permanent text readability */}
+                {/* Dark Vignette Overlay for text readability */}
                 <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 
                 {/* Fixed Label Content */}
@@ -112,7 +134,7 @@ export default function CommercialGallery() {
                 </div>
 
                 {/* Column 3: Corporate Client Stakeholder */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
                   {log.client}
                 </div>
               </motion.div>

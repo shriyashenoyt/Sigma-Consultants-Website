@@ -8,15 +8,15 @@ export default function IndustrialGallery() {
     { id: 1, title: "Industrial Plant Layout", img: "/projects/industrial/industrial-bg.png" },
   ];
 
-  // 2. Comprehensive Industrial Data Directory extracted from your official logs
+  // 2. Full Consolidated Industrial Registry (7 entries matching your official logs)
   const projectLog = [
     { name: "2 MW Hydro Power Plant at Sringeri", year: "2006-07", client: "M/S Chescom" },
     { name: "0.8 MW Hydro Power Plant Raichur", year: "2005", client: "M/S Gescom" },
     { name: "Enaltech Lab at Ambernath Mumbai", year: "-", client: "-" },
-    { name: "Heavy Engineering Manufacturing Plant", year: "2021", client: "Private Operator" },
-    { name: "Automobile Assembly Unit Framework", year: "2023", client: "M/S Automotive Ltd" },
-    { name: "Steel Rolling Mill Shed", year: "2019", client: "Steel Processing Corp" },
-    { name: "Logistics & Cold Storage Depot", year: "2022", client: "SupplyChain Logistics" },
+    { name: "Industrial Shed at Bykampadi", year: "2008", client: "M/S GWASF" },
+    { name: "Oil Storage Silos at Bythakol, Karvar", year: "2022", client: "M/S MMCL" },
+    { name: "Factory building at Pananmburur, Mangalore", year: "2025", client: "MK Agroteck" },
+    { name: "Factory Building at Rathnagiri Maharastra", year: "2025", client: "MK Agroteck" }
   ];
 
   return (
@@ -32,8 +32,8 @@ export default function IndustrialGallery() {
             Industrial <span className="text-engineering-yellow">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
-            High-load foundations, massive clear-span warehouses, and heavy manufacturing facilities 
-            engineered to optimize material durability, structural safety, and industrial operations.
+            High-load foundations, massive clear-span manufacturing facilities, processing plants, and heavy 
+            utility generation hubs built to withstand demanding operational conditions.
           </p>
         </div>
 
@@ -111,7 +111,7 @@ export default function IndustrialGallery() {
                 </div>
 
                 {/* Column 3: Corporate Client Stakeholder */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
                   {log.client}
                 </div>
               </motion.div>

@@ -6,17 +6,17 @@ export default function InstitutionalGallery() {
   // 1. Featured items with photos (Curated visual highlights)
   const featuredProjects = [
     { id: 1, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
-    { id: 2, title: "Royal Concord", img: "/projects/institutional/Royal_Concord.jpg.jpeg" },
-    { id: 3, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
+    //{ id: 2, title: "Soundarya Kamakshi Apartment", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
+    // { id: 2, title: "Royal Concord", img: "/projects/institutional/Royal_Concord.jpg.jpeg" },
+    { id: 2, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
   ];
 
-  // 2. Comprehensive Master Data Directory: Campus + Worship + Hospital Records
+  // 2. Full Consolidated Institutional Master Registry (63 entries matching your official logs)
   const projectLog = [
     // --- HOSPITAL & HEALTHCARE PROJECTS ---
     { name: "Medical College and Hospital Campus at T Begur", year: "2014-15", client: "M/S Siddartha Education Society Tumkur" },
     { name: "Medical College & Hospital Campus at Jabalpur, Madhya Pradesh", year: "-", client: "M/S Jain Community Trust" },
     { name: "Parimala Hospital on Bannerghatta Road, Bangalore", year: "-", client: "-" },
-    { name: "Enaltech Lab at Ambernath Mumbai", year: "-", client: "-" },
     { name: "Nursing Home at Kolar", year: "-", client: "Dr. Narayana Swamy" },
     { name: "Education & Therapy Centre at Tiruvannamalai, Tamilnadu", year: "-", client: "Ramana Mharshi Rangamahal Hospital" },
     { name: "ED & AIDS Hospital at Byyappahalli Old Madras Road, Bangalore", year: "2012", client: "M/S Namma Metro" },
@@ -28,14 +28,11 @@ export default function InstitutionalGallery() {
     { name: "Installation Cancer Unit Bunker to Bangalore Institute of Oncology, B'lore", year: "-", client: "M/S HCG Enterprises Pvt. Ltd." },
     { name: "Installation Cancer Unit Bunker to Malnad Institute of Oncology, Bhadravathi", year: "-", client: "M/S HCG Enterprises Pvt. Ltd." },
     { name: "Covid 19 Specialized Zone Yelahanka, Bangalore", year: "-", client: "-" },
-    { name: "Quarantine and Isolation Facility, on Airport Road, Bangalore", year: "-", client: "M/S CPWD" },
     { name: "Ayurvedic Hospital at Bagalkot", year: "-", client: "-" },
     { name: "Vinayaka Hospital at Tumkur", year: "-", client: "-" },
     { name: "Art & Health Care Centre Tumkur", year: "-", client: "Dr. Sai Prasad" },
-    { name: "St. John's Medical College Campus, B'lore-Women's Hostel, Doctor's Quarters", year: "-", client: "St. John's Academy of Health Science" },
     { name: "Additions & Alterations to Existing Hospital at Sampangiram Nagar, B'lore", year: "-", client: "PD Hinduja Hospital" },
     { name: "Additions & Alterations to Existing Hospital at Gulbarga", year: "-", client: "M/S Nisti Hospital" },
-    { name: "Additions & Alterations to Existing Hospital at Ankola", year: "-", client: "M/S KLE Society" },
     { name: "Gulzar Upvana, spiritual Research Centre Lucknow", year: "2020", client: "Sri Brahma Kumaris" },
     { name: "Nemmadivana Wellness Centre at Sakaleshpura", year: "-", client: "-" },
     { name: "Parika Manipal", year: "-", client: "M/S SDM Society" },
@@ -60,7 +57,6 @@ export default function InstitutionalGallery() {
     // --- PLACES OF WORSHIP ---
     { name: "Sri Venkataraman Devasthana, Ananth Nagar, Bangalore", year: "2003", client: "GSB Welfare Association" },
     { name: "Church Building 1 at Nagaland", year: "2007-08", client: "Sumi Baptist Church" },
-    { name: "GMR Guest House at Tirumala", year: "2007-08", client: "M/S GMR Group" },
     { name: "Arya Samaja Building at V V Puram Bangalore", year: "2008-09", client: "M/S Arya Samaja" },
     { name: "Sri Sathya Sai Baba Ashram & Campus in 10 Dist, K'taka", year: "2009-19", client: "Prashanthi Bala Mandira Trust" },
     { name: "Church Building 2 at Nagaland", year: "2017-19", client: "Lotha Baptist Church" },
@@ -75,8 +71,13 @@ export default function InstitutionalGallery() {
     { name: "Sri Veera Bhadreshwara Temple Bidar - Construction of Guest Room Block & Kalyana Mantapa", year: "2019-20", client: "Mujarai Elakhe, Govt. of Karnataka" },
     { name: "Proposed Shivaling at Mysore", year: "2020", client: "Brahma Kumaris" },
     { name: "Sri Subramanya Mutt at Haralur Bangalore", year: "2020", client: "-" },
-    { name: "Proposed Interpretation Centre at Nasik", year: "2018", client: "Archaeological Department" },
-    { name: "Proposed Interpretation Centre at Chithradurga", year: "2018", client: "Archaeological Department" },
+    
+    // --- COASTAL KARNATAKA & GEOGRAPHIC RECLASSIFICATION LOGS ---
+    { name: "Diploma College Campus at Ujire", year: "2009", client: "M/S SDM Society" },
+    { name: "Museum and Srimudi Building at Sri Dharmasthala", year: "2013", client: "M/S SDM Society" },
+    { name: "Premadhama abode of Love - An old age home at Bantwala", year: "1999-2000", client: "Sri Ram Nayak" },
+    { name: "Parika Extension at Parkala, Udupi", year: "2017-18", client: "M/S SDM Society" },
+    { name: "School Campus at Mangalore", year: "2018", client: "M/s Fana School" }
   ];
 
   return (
@@ -92,8 +93,7 @@ export default function InstitutionalGallery() {
             Institutional <span className="text-engineering-yellow">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
-            Specialized engineering for educational landmarks, multi-wing medical campuses, healthcare infrastructure, 
-            and long-span sacred architecture requiring detailed mathematical validation.
+            Specialized engineering for complex educational systems, high-compliance health centers, radiation-shielded cancer bunkers, and iconic long-span religious architecture.
           </p>
         </div>
 
@@ -144,7 +144,7 @@ export default function InstitutionalGallery() {
             <div className="col-span-3 text-right md:text-left">Client / Trust / Society</div>
           </div>
 
-          {/* Data Log Row Output Loop */}
+          {/* Data Log Row Component Output Loop */}
           <div className="divide-y divide-white/5">
             {projectLog.map((log, index) => (
               <motion.div 
@@ -166,7 +166,7 @@ export default function InstitutionalGallery() {
                 </div>
 
                 {/* Column 3: Client Stakeholder Entity */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs truncate" title={log.client}>
+                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
                   {log.client}
                 </div>
               </motion.div>

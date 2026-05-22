@@ -5,49 +5,49 @@ import { motion } from 'framer-motion';
 export default function AwardsPage() {
   const achievements = [
     { 
-      title: "25 Years of Excellence", 
-      year: "2026", 
-      category: "Structural Consultancy", 
+      title: "Inauguration of Premamrutham", 
+      year: "2014", 
+      //category: "Structural Consultancy", 
       icon: <Trophy size={32} />,
       img: "/projects/awards/gavaskar.jpeg",
       isPortrait: false 
     },
     { 
-      title: "10,000 Projects Milestone", 
+      title: "Celebration of Sri Satya Sai Baba's 100th Birth Anniversary at Muddenhalli", 
       year: "2025", 
-      category: "Project Delivery", 
+      //category: "Project Delivery", 
       icon: <Milestone size={32} />,
       img: "/projects/awards/muddenhalli.jpeg",
       isPortrait: false
     },
     { 
-      title: "Industrial Design Lead", 
-      year: "2021", 
-      category: "Industrial Sector", 
+      title: "Recognised for Temple Service", 
+      year: "2003", 
+      //category: "Industrial Sector", 
       icon: <Award size={32} />,
       img: "/projects/awards/swami.jpeg",
       isPortrait: false
     },
     { 
-      title: "Safety Integrity Award", 
-      year: "2018", 
-      category: "On-site Excellence", 
+      title: "Feliciation for Sosale Matt at T. Narasipura", 
+      year: "2020", 
+      //category: "On-site Excellence", 
       icon: <ShieldCheck size={32} />,
       img: "/projects/awards/swami2.jpeg",
       isPortrait: false
     },
     { 
-      title: "Iconic Infrastructure Honor", 
-      year: "2015", 
-      category: "Government Projects", 
+      title: "Honored for Service Rendered to the Kalyana Mantapa at Nalavara, Gulbarga", 
+      year: "2020", 
+      //category: "Government Projects", 
       icon: <Building size={32} />,
       img: "/projects/awards/swami-p.jpeg", 
       isPortrait: true // First Portrait Item
     },
     { 
-      title: "Visionary Structural Engineer", 
+      title: "Feliciation for Boodi Basaveshwara Matt at Raichur", 
       year: "2026", 
-      category: "Individual Design", 
+      //category: "Individual Design", 
       icon: <Eye size={32} />,
       img: "/projects/awards/swami2-p.jpeg",
       isPortrait: true // Second Portrait Item
@@ -111,7 +111,6 @@ export default function AwardsPage() {
                   {item.title}
                 </h3>
                 <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
-                  <span>{item.category}</span>
                   <span className="text-engineering-yellow">{item.year}</span>
                 </div>
               </div>
