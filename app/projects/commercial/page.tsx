@@ -5,7 +5,6 @@ import { MapPin, Building2 } from 'lucide-react';
 export default function CommercialGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    //{ id: 1, title: "Premamrutham Pink Skies", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
     { id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
   ];
 
@@ -52,7 +51,7 @@ export default function CommercialGallery() {
             Sector Portfolio
           </p>
           <h1 className="text-5xl md:text-7xl font-black uppercase italic text-white">
-            Commercial <span className="text-engineering-yellow">Projects</span>
+            Civic & Community <span className="text-engineering-yellow">Spaces</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
             From modern steel clear-span convention halls to multi-storey corporate headquarters, our 
@@ -99,43 +98,49 @@ export default function CommercialGallery() {
           </div>
         </div>
 
-        {/* ================= PART 2: 3-COLUMN MASTER DATA MATRIX ================= */}
+        {/* ================= PART 1.5: LAYOUT OPTION 1 - CHRONOLOGICAL TIMELINE TRACK ================= */}
         <div>
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
-            <MapPin size={14} className="text-engineering-yellow" /> Official Project Registry
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2">
+            <MapPin size={14} className="text-engineering-yellow" /> Chronological Engineering Ledger
           </h2>
 
-          {/* 3-Column Header Track with matching column configurations */}
-          <div className="grid grid-cols-12 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow gap-4">
-            <div className="col-span-6 md:col-span-7">Project Description / Classification</div>
-            <div className="col-span-3 md:col-span-2 text-center md:text-left">Year</div>
-            <div className="col-span-3 text-right md:text-left">Client / Corporate Entity</div>
-          </div>
-
-          {/* Data Log Row Component Output Loop */}
-          <div className="divide-y divide-white/5">
+          {/* Master Vertical Timeline Line */}
+          <div className="relative border-l border-white/10 pl-6 ml-2 space-y-10">
             {projectLog.map((log, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-12 py-4 items-center text-xs md:text-sm hover:bg-white/[0.02] transition-colors gap-4 px-1"
+                transition={{ duration: 0.4 }}
+                className="relative group"
               >
-                {/* Column 1: Row Counter + Project Name */}
-                <div className="col-span-6 md:col-span-7 font-bold uppercase text-white tracking-tight leading-tight pr-2">
-                  <span className="text-slate-600 font-mono text-[11px] mr-2 inline-block w-6">{index + 1}.</span>
-                  {log.name}
-                </div>
+                {/* Interactive Node Point Bullet */}
+                <div className="absolute -left-[31px] top-1.5 w-2 h-2 rounded-full bg-slate-900 border border-white/30 group-hover:bg-engineering-yellow group-hover:border-engineering-yellow transition-colors duration-300 z-10" />
                 
-                {/* Column 2: Fiscal Execution Window */}
-                <div className="col-span-3 md:col-span-2 text-slate-400 font-mono text-center md:text-left tracking-wide">
-                  {log.year}
-                </div>
+                {/* Responsive Track Row Container */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  
+                  {/* Left Block: Index Counter + Project Name + Client Tag */}
+                  <div className="max-w-3xl">
+                    <h3 className="text-sm md:text-base font-bold uppercase text-white tracking-tight group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
+                      <span className="text-slate-600 font-mono text-xs mr-2 select-none inline-block w-6">
+                        {String(index + 1).padStart(2, '0')}.
+                      </span>
+                      {log.name}
+                    </h3>
+                    
+                    <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wider mt-1.5 pl-8 break-words leading-tight">
+                      <span className="text-slate-600 font-mono normal-case mr-1">Stakeholder:</span>
+                      {log.client !== "-" ? log.client : "Private Infrastructure Asset"}
+                    </p>
+                  </div>
+                  
+                  {/* Right Block: Minimalist Date Badge Track */}
+                  <div className="text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded pl-8 md:pl-2.5 self-start md:self-auto min-w-[80px] text-center shrink-0">
+                    {log.year !== "-" ? log.year : "Completed"}
+                  </div>
 
-                {/* Column 3: Corporate Client Stakeholder */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
-                  {log.client}
                 </div>
               </motion.div>
             ))}

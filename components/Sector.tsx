@@ -21,7 +21,7 @@ export default function SectorBlocks() {
       img: "/projects/industrial/industrial-bg.png" 
     },
     { 
-      title: "Commercial", 
+      title: "Civic & Community", 
       count: "2,500+", 
       desc: "Offices & Retail", 
       path: "/projects/commercial",

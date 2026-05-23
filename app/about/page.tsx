@@ -146,12 +146,12 @@ export default function AboutPage() {
           
           <div className="relative w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center">
             {member.image ? (
-              // If image path exists, render the photo
+              // If image path exists, render the photo in full permanent color
               <Image 
                 src={member.image} 
                 alt={member.name}
                 fill
-                className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                className="object-cover group-hover:scale-110 transition-all duration-700"
               />
             ) : (
               // Silhouette Placeholder: Renders if image is an empty string ("")

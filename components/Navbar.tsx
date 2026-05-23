@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: 'Institutional', href: '/projects/institutional' },
     { name: 'Government', href: '/projects/government' },
     { name: 'Residential', href: '/projects/residential' },
-    { name: 'Commercial', href: '/projects/commercial' },
+    { name: 'Civic & Community', href: '/projects/commercial' },
     { name: 'Industrial', href: '/projects/industrial' },
   ];
 

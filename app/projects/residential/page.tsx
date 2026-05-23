@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Home } from 'lucide-react';
 
 export default function ResidentialGallery() {
-  // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
+  // 1. Featured items with photos (Maintained in a crisp grid layout)
   const featuredProjects = [
     { id: 1, title: "Apartment Building for Century Builders", img: "/projects/residential/c4167fa8-813c-4a89-ba91-1a2dc1733c94.jpg" },
     { id: 2, title: "High End Villa at Bengaluru", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
@@ -15,7 +15,7 @@ export default function ResidentialGallery() {
     { id: 8, title: "Apartment Building at Chennai", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
   ];
 
-  // 2. Full Consolidated Residential & Housing Registry (73 entries matching your official logs)
+  // 2. Full Consolidated Residential & Housing Registry (71 entries)
   const projectLog = [
     { name: "Surya Residency at Bangalore", year: "2003-04", client: "M/S Surya Developers" },
     { name: "Banyan Tree Apartments Bangalore", year: "2005-06", client: "M/S Bhumija Developers" },
@@ -40,7 +40,6 @@ export default function ResidentialGallery() {
     { name: "Abode for Mr. Mehra Family at Delhi", year: "2011", client: "M/S Jaquar Group" },
     { name: "Apartment Building at Kamakshi Palya Bangalore", year: "2016", client: "M/S Soundarya Construction" },
     { name: "Apartment Building at Jalahalli Bangalore", year: "2017", client: "M/S Soundarya Construction" },
-   // { name: "Pradhan Mantri Awaz Yojana, Tumkur, Mysore, Chikmangalore", year: "2021", client: "PMAY" },
     { name: "Proposed Apartment Building at Sanjaya Nagara", year: "2021", client: "-" },
     { name: "Apartment Building for M/S Bhavish Infra at BTM Layout B'lore", year: "2023-24", client: "M/S Bhavish Infra" },
     { name: "Apartment Building for M/S Bhavish Infra at RR Nagar Bangalore", year: "2024-25", client: "M/S Bhavish Infra" },
@@ -110,7 +109,7 @@ export default function ResidentialGallery() {
           </p>
         </div>
 
-        {/* ================= PART 1: VISUAL TABULAR GRID (2 Columns) ================= */}
+        {/* ================= PART 1: VISUAL GALLERIES (2 Columns) ================= */}
         <div className="mb-28">
           <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
             <Home size={14} className="text-engineering-yellow" /> Featured Residences
@@ -123,19 +122,14 @@ export default function ResidentialGallery() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
                 className="group relative h-[380px] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-8"
               >
-                {/* Background Image */}
                 <div
                   className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url(${project.img})` }}
                 />
-                
-                {/* Dark Vignette Overlay for text legibility */}
                 <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                
-                {/* Fixed Label Content */}
                 <div className="relative z-10">
                   <span className="text-engineering-yellow text-[10px] font-mono tracking-widest block mb-1">
                     FRAMEWORK STRUCTURE 0{project.id}
@@ -149,43 +143,49 @@ export default function ResidentialGallery() {
           </div>
         </div>
 
-        {/* ================= PART 2: 3-COLUMN MASTER DATA MATRIX ================= */}
+        {/* ================= PART 2: CHRONOLOGICAL TIMELINE TRACK ================= */}
         <div>
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
-            <MapPin size={14} className="text-engineering-yellow" /> Housing & Towers Directory
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2">
+            <MapPin size={14} className="text-engineering-yellow" /> Chronological Engineering Ledger
           </h2>
 
-          {/* 3-Column Header Track */}
-          <div className="grid grid-cols-12 pb-4 border-b-2 border-white/10 text-xs font-black uppercase tracking-widest text-engineering-yellow gap-4">
-            <div className="col-span-6 md:col-span-7">Residential Complex / Developer / Estate</div>
-            <div className="col-span-3 md:col-span-2 text-center md:text-left">Year</div>
-            <div className="col-span-3 text-right md:text-left">Client / Developer Entity</div>
-          </div>
-
-          {/* Data Log Row Component Output Loop */}
-          <div className="divide-y divide-white/5">
+          {/* Master Vertical Timeline Line */}
+          <div className="relative border-l border-white/10 pl-6 ml-2 space-y-10">
             {projectLog.map((log, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-12 py-4 items-center text-xs md:text-sm hover:bg-white/[0.02] transition-colors gap-4 px-1"
+                transition={{ duration: 0.35 }}
+                className="relative group"
               >
-                {/* Column 1: Row Counter + Project Name */}
-                <div className="col-span-6 md:col-span-7 font-bold uppercase text-white tracking-tight leading-tight pr-2">
-                  <span className="text-slate-600 font-mono text-[11px] mr-2 inline-block w-6">{index + 1}.</span>
-                  {log.name}
-                </div>
+                {/* Interactive Node Dot */}
+                <div className="absolute -left-[31px] top-1.5 w-2 h-2 rounded-full bg-slate-900 border border-white/30 group-hover:bg-engineering-yellow group-hover:border-engineering-yellow transition-colors duration-300 z-10" />
                 
-                {/* Column 2: Fiscal Window */}
-                <div className="col-span-3 md:col-span-2 text-slate-400 font-mono text-center md:text-left tracking-wide">
-                  {log.year}
-                </div>
+                {/* Responsive Track Row Container */}
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                  
+                  {/* Left Block: Index Counter + Project Title + Client Tag */}
+                  <div className="max-w-3xl">
+                    <h3 className="text-sm md:text-base font-bold uppercase text-white tracking-tight group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
+                      <span className="text-slate-600 font-mono text-xs mr-2 select-none inline-block w-6">
+                        {String(index + 1).padStart(2, '0')}.
+                      </span>
+                      {log.name}
+                    </h3>
+                    
+                    <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wider mt-1.5 pl-8 break-words leading-tight">
+                      <span className="text-slate-600 font-mono normal-case mr-1">Developer / Client:</span>
+                      {log.client !== "-" ? log.client : "Private Residential Commission"}
+                    </p>
+                  </div>
+                  
+                  {/* Right Block: Date / Status Badge */}
+                  <div className="text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded pl-8 md:pl-2.5 self-start md:self-auto min-w-[90px] text-center shrink-0 tracking-wider">
+                    {log.year !== "-" ? log.year : "COMPLETE"}
+                  </div>
 
-                {/* Column 3: Client Stakeholder Entity */}
-                <div className="col-span-3 text-slate-400 font-medium text-right md:text-left tracking-wide uppercase text-[11px] md:text-xs break-words leading-tight" title={log.client}>
-                  {log.client}
                 </div>
               </motion.div>
             ))}
