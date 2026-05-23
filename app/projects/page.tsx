@@ -23,7 +23,7 @@ export default function ProjectsPage() {
             10,000+ <span className="text-white not-italic">Projects</span>
           </h1>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            From industrial powerhouses in India to residential landmarks globally, 
+            From industrial powerhouses in India to commercial landmarks globally, 
             Sigma Consultants has set the standard for structural safety for 25 years.
           </p>
         </div>

@@ -26,7 +26,7 @@ export default function About() {
             {/* Smoothed base text hierarchy from text-lg to text-sm/base mixed values */}
             <p className="text-slate-400 text-sm md:text-base mb-10 leading-relaxed max-w-xl mx-auto">
               Led by our MD and Senior Designer, Sigma Consultants enters its 25th year of excellence. 
-              With 10,000+ global projects, we specialize in high-precision structural design for 
+              With 10,000+ projects, with some global presence, we specialize in high-precision structural design for 
               industrial, public, and residential sectors.
             </p>
             
