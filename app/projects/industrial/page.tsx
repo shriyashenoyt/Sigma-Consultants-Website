@@ -6,6 +6,7 @@ export default function IndustrialGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
     { id: 1, title: "Industrial Plant Layout", img: "/projects/industrial/industrial-bg.png" },
+    { id: 2, title: "Goshala", img: "/projects/industrial/goshala.jpg" },
   ];
 
   // 2. Full Consolidated Industrial Registry (7 entries matching your official logs)

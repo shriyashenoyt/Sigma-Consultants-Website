@@ -6,6 +6,9 @@ export default function GovernmentGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
     { id: 1, title: "MG Road Boulevard - Bengaluru", img: "/projects/government/government-bg.jpg" },
+    { id: 2, title: "Pradhan Mantri Awaz Yojana", img: "/projects/government/pmay-mysore.jpg" },
+    { id: 3, title: "Navule Cricket Stadium - Shimoga", img: "/projects/government/cricket_stadium_shimoga.jpg" },
+    { id: 4, title: "Marina Beach, Chennai", img: "/projects/government/marina_beach.png" }
   ];
 
   // 2. Full Consolidated Government Registry (13 entries matching your official logs)

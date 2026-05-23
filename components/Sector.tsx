@@ -14,7 +14,7 @@ export default function SectorBlocks() {
   const sectors = [
     { 
       title: "Industrial", 
-      count: "3,500+", 
+      count: "1,000+", 
       desc: "Warehouses & Factories", 
       path: "/projects/industrial",
       img: "/projects/industrial/industrial-bg.png" 
@@ -28,7 +28,7 @@ export default function SectorBlocks() {
     },
     { 
       title: "Residential", 
-      count: "4,000+", 
+      count: "7,000+", 
       desc: "Villas & Apartments", 
       path: "/projects/residential",
       img: "/projects/residential/residential-bg.jpeg" 

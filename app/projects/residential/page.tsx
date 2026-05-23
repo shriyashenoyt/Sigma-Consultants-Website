@@ -13,6 +13,10 @@ export default function ResidentialGallery() {
     { id: 6, title: "Soundarya Kamakshi Apartment - Bengaluru", img: "/projects/residential/Soundarya_Kamakshi.JPG.jpeg" },
     { id: 7, title: "Apartment Building at Bangalore", img: "/projects/institutional/Royal_Concord.jpg.jpeg" },
     { id: 8, title: "Apartment Building at Chennai", img: "/projects/commercial/Landmark_Chennai.jpg.jpeg" },
+    { id: 9, title: "Farmhouse at Sondekoppa, Bengaluru", img: "/projects/residential/farmhouse.png" },
+    { id: 10, title: "Residence for Adv. Chandrashekhar Reddy at Sahakaranagar, Bengaluru", img: "/projects/residential/lawyer.png" },
+    { id: 11, title: "Residence for Sri Veerendra Heggade (Beedu), Dharmasthala", img: "/projects/residential/beedu.jpg" },
+
   ];
 
   // 2. Full Consolidated Residential & Housing Registry (71 entries)

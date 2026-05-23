@@ -7,6 +7,7 @@ export default function CommercialGallery() {
   const featuredProjects = [
     { id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
     { id: 2, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
+    { id: 3, title: "Commercial Building at Rajajinagar, Bengaluru", img: "/projects/commercial/rajajinagar.png" },
   ];
 
   // 2. Full Consolidated Commercial Registry (29 entries matching your official logs)
@@ -77,7 +78,7 @@ export default function CommercialGallery() {
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
             From modern steel clear-span convention halls to multi-storey corporate headquarters, our 
-            commercial blueprints optimize functional square-footage while matching rigid building code compliance metrics.
+            commercial and community blueprints optimize functional square-footage while matching rigid building code compliance metrics.
           </p>
         </div>
 
