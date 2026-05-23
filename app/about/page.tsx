@@ -11,17 +11,17 @@ export default function AboutPage() {
       desc: "Expert in STAAD.Pro and ETABS structural modeling and analysis." 
     },
     { 
-      name: "Devraj Hosahallu", 
-      role: "Project Engineer", 
-      image: "",
-      desc: "Specializing in high-rise residential structural design." 
-    },
-    { 
-      name: "Narendra", 
-      role: "Project Engineer", 
-      image: "",
-      desc: "Expert in AutoCAD technical detailing and blueprint drafting." 
-    },
+    name: "Devraj Hosahallu", 
+    role: "Quality Control, Quantity Surveyor & Site Inspector", 
+    image: "",
+    desc: "Specializes in rigorous material testing standards, project cost estimation, and on-site enforcement of structural design compliance." 
+  },
+  { 
+    name: "Narendra", 
+    role: "Quality Control, Quantity Surveyor & Site Inspector", 
+    image: "",
+    desc: "Expert in cross-verifying structural blueprints with real-world execution, managing material quantities, and ensuring precision site engineering." 
+  },
   ];
 
   return (
@@ -162,7 +162,7 @@ export default function AboutPage() {
             </div>
             
             <div className="mt-6 text-center lg:text-left">
-              <h2 className="text-2xl font-black uppercase tracking-tight text-white">Sathish Shenoy</h2>
+              <h2 className="text-2xl font-black uppercase tracking-tight text-white">Sathish Devanna Shenoy</h2>
               <p className="text-engineering-yellow text-xs font-mono font-bold uppercase tracking-wider mt-1">Proprietor & Managing Director</p>
               
               <div className="flex items-center gap-2 mt-4 justify-center lg:justify-start text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded">
