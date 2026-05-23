@@ -6,6 +6,7 @@ export default function CommercialGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
     { id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
+    { id: 2, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
   ];
 
   // 2. Full Consolidated Commercial Registry (29 entries matching your official logs)
@@ -38,8 +39,29 @@ export default function CommercialGallery() {
     { name: "SDM Kalyana Mantapa at Belthangadi", year: "2010", client: "M/S SDM Society" },
     { name: "Sahyadri Guest House building at Sri Dharmasthala", year: "2014", client: "M/S SDM SOCIETY" },
     { name: "Soofi Convention Centre at Talapady, Mangalore", year: "-", client: "-" },
-    { name: "Mall of Bangalore at Electronic City", year: "2021-22", client: "-" }
+    { name: "Mall of Bangalore at Electronic City", year: "2021-22", client: "-" },
+
+
+   // --- PLACES OF WORSHIP ---
+    { name: "Sri Venkataraman Devasthana, Ananth Nagar, Bangalore", year: "2003", client: "GSB Welfare Association" },
+    { name: "Church Building 1 at Nagaland", year: "2007-08", client: "Sumi Baptist Church" },
+    { name: "Arya Samaja Building at V V Puram Bangalore", year: "2008-09", client: "M/S Arya Samaja" },
+    { name: "Sri Sathya Sai Baba Ashram & Campus in 10 Dist, K'taka", year: "2009-19", client: "Prashanthi Bala Mandira Trust" },
+    { name: "Church Building 2 at Nagaland", year: "2017-19", client: "Lotha Baptist Church" },
+    { name: "Sri Sathya Sai Baba Ashram & Campus at Madurai", year: "2019", client: "Prashanthi Bala Mandira Trust" },
+    { name: "Sri Ramanashrama at Tiruvannamalai Tamilnadu", year: "2007-09", client: "Sri Ramanashrama" },
+    { name: "Noorani Masjid, Bangalore", year: "2013-14", client: "-" },
+    { name: "Kanha Shanthivanm at Hyderabad", year: "2017-19", client: "M/S SRCM" },
+    { name: "Kanha Shanthivanm at Bareilly Uttar Pradesh", year: "2017-19", client: "M/S SRCM" },
+    { name: "Kanha Shanthivanm at Satkol", year: "2017-19", client: "M/S SRCM" },
+    { name: "Proposed Extension of Masjid E Pirdosh at Richards Town", year: "2019-20", client: "-" },
+    { name: "Nalwar Mutt - Additions & Alterations", year: "2018-20", client: "-" },
+    { name: "Sri Veera Bhadreshwara Temple Bidar - Construction of Guest Room Block & Kalyana Mantapa", year: "2019-20", client: "Mujarai Elakhe, Govt. of Karnataka" },
+    { name: "Proposed Shivaling at Mysore", year: "2020", client: "Brahma Kumaris" },
+    { name: "Sri Subramanya Mutt at Haralur Bangalore", year: "2020", client: "-" },
+
   ];
+
 
   return (
     <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24">
