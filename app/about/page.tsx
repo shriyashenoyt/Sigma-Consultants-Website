@@ -181,7 +181,7 @@ export default function AboutPage() {
                 Foundational Engineering Practice (1993 - 2002)
               </h3>
               <p className="text-slate-400 text-sm md:text-base leading-relaxed">
-                Before founding Sigma Consultants to launch independent practice, sathish Shenoy developed structural mastery across nationwide infrastructure deployments, includingKonkan Railway and specialized corporate assets.
+                Before founding Sigma Consultants to launch independent practice, Sathish Shenoy developed structural mastery across nationwide infrastructure deployments, including Konkan Railway and specialized corporate assets.
               </p>
             </div>
 
