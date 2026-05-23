@@ -5,10 +5,10 @@ import { MapPin, Building2 } from 'lucide-react';
 export default function CommercialGallery() {
   // 1. Featured items with photos (Maintained in a crisp 2-column structural grid layout)
   const featuredProjects = [
-    { id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
-    { id: 2, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
-    { id: 3, title: "Commercial Building at Rajajinagar, Bengaluru", img: "/projects/commercial/rajajinagar.png" },
-    { id: 4, title: "Sri Venkatramana Devasthan at Ananthnagar, Bengaluru", img: "/projects/commercial/ananthnagar.jpeg" },
+    //{ id: 1, title: "Commercial Building in Bengaluru", img: "/projects/commercial/commercial-bg.jpg.jpeg" },
+    { id: 1, title: "Dhimapur Church", img: "/projects/institutional/Church_Building_Dhimapur-Nagaland.jpg.jpeg" },
+    { id: 2, title: "Commercial Building at Rajajinagar, Bengaluru", img: "/projects/commercial/rajajinagar.png" },
+    { id: 3, title: "Sri Venkatramana Devasthan at Ananthnagar, Bengaluru", img: "/projects/commercial/ananthnagar.jpeg" },
   ];
 
   // 2. Full Consolidated Commercial Registry (29 entries matching your official logs)
