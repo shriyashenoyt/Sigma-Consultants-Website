@@ -16,7 +16,7 @@ export default function CommercialGallery() {
     { name: "Convention Centre at Channa Patna", year: "-", client: "-" },
     { name: "Jain Convention Hall Tumkur", year: "-", client: "-" },
     { name: "SDM Convention Hall-Beltangadi", year: "-", client: "-" },
-    { name: "Additions & Alterations to Existing SDM Convention Centre, Bangalore", year: "-", client: "-" },
+    //{ name: "Additions & Alterations to Existing SDM Convention Centre, Bangalore", year: "-", client: "-" },
     { name: "Soofi Convention Hall-Talpady Mangalore", year: "-", client: "-" },
     { name: "KVN Convention Hall-Dodda Ballapura", year: "-", client: "-" },
     { name: "TUR Convention Hall-Tumkur", year: "-", client: "-" },
@@ -40,7 +40,7 @@ export default function CommercialGallery() {
     { name: "Gulbarga Club - Additions and Alterations", year: "-", client: "M/S Gulbarga Club" },
     { name: "SDM Kalyana Mantapa at Belthangadi", year: "2010", client: "M/S SDM Society" },
     { name: "Sahyadri Guest House building at Sri Dharmasthala", year: "2014", client: "M/S SDM SOCIETY" },
-    { name: "Soofi Convention Centre at Talapady, Mangalore", year: "-", client: "-" },
+    //{ name: "Soofi Convention Centre at Talapady, Mangalore", year: "-", client: "-" },
     { name: "Mall of Bangalore at Electronic City", year: "2021-22", client: "-" },
 
 
@@ -56,10 +56,10 @@ export default function CommercialGallery() {
     { name: "Kanha Shanthivanm at Hyderabad", year: "2017-19", client: "M/S SRCM" },
     { name: "Kanha Shanthivanm at Bareilly Uttar Pradesh", year: "2017-19", client: "M/S SRCM" },
     { name: "Kanha Shanthivanm at Satkol", year: "2017-19", client: "M/S SRCM" },
-    { name: "Proposed Extension of Masjid E Pirdosh at Richards Town", year: "2019-20", client: "-" },
+    { name: "Extension of Masjid E Pirdosh at Richards Town", year: "2019-20", client: "-" },
     { name: "Nalwar Mutt - Additions & Alterations", year: "2018-20", client: "-" },
     { name: "Sri Veera Bhadreshwara Temple Bidar - Construction of Guest Room Block & Kalyana Mantapa", year: "2019-20", client: "Mujarai Elakhe, Govt. of Karnataka" },
-    { name: "Proposed Shivaling at Mysore", year: "2020", client: "Brahma Kumaris" },
+    { name: "Shivaling at Mysore", year: "2020", client: "Brahma Kumaris" },
     { name: "Sri Subramanya Mutt at Haralur Bangalore", year: "2020", client: "-" },
 
   ];

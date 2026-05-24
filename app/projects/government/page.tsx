@@ -25,7 +25,7 @@ export default function GovernmentGallery() {
     { name: "Zilla Panchayath Office at Chiitur", year: "2012", client: "Govt. of Andhra Pradesh" },
     { name: "Dr. B. R. Ambedkar Bhavan at Wadi", year: "2019-20", client: "Karmika Elakhe, Govt. of Karnataka" },
     { name: "Pradhan Mantri Awaz Yojana, Tumkur, Mysore, Chikmangalore", year: "2021", client: "GOI" },
-    { name: "Marina Beach Heritage, Chennai / Marina Beach Chennai, Tamilnadu", year: "2025", client: "Govt. of Tamilnadu / Chennai Metropolitan Dev. Authority" }
+    { name: "Marina Beach Heritage, Chennai", year: "2025", client: "Govt. of Tamilnadu / Chennai Metropolitan Dev. Authority" }
   ];
 
   return (
