@@ -16,7 +16,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Call Us</p>
-                  <p className="text-xl font-bold">9844069706</p><p className="text-xl font-bold">9900199705</p>
+                  <p className="text-xl font-bold">+91 9844069706</p><p className="text-xl font-bold">+91 9900199705</p>
                 </div>
               </div>
 
