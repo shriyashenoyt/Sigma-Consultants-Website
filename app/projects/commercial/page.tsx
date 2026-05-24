@@ -60,7 +60,7 @@ export default function CommercialGallery() {
   ];
 
   return (
-    <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24 font-sans antialiased overflow-x-hidden">
+    <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24">
       <div className="container mx-auto px-6 max-w-6xl">
         
         {/* ================= HEADER SECTION ================= */}
