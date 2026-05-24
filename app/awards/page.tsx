@@ -138,7 +138,7 @@ export default function AwardsPage() {
 
               {/* Text Meta Content Info */}
               <div className="pt-4 border-t border-white/5 mt-auto">
-                <h3 className="text-lg md:text-xl font-black uppercase tracking-tight mb-2 group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
+                <h3 className="text-xs md:text-sm font-black uppercase tracking-tight mb-2 group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
                   {item.title}
                 </h3>
                 <div className="flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-slate-500">

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { MapPin, Landmark } from 'lucide-react';
 
 export default function InstitutionalGallery() {
-  // 1. Featured items with photos (Curated visual highlights - 2 items per row layout)
+  // 1. Featured items with photos (Strictly 2 per row desktop layout + smaller text + hover zoom)
   const featuredProjects = [
     { id: 1, title: "Sri Sathya Sai Anandaniketanam", img: "/projects/institutional/Sri-Sathya-Sai-Anandaniketanam-Mudhol.jpg.jpeg" },
     { id: 2, title: "Kanha Shanthivanm, Hyderabad", img: "/projects/institutional/shanthivanam.png" },
@@ -70,24 +70,23 @@ export default function InstitutionalGallery() {
         
         {/* ================= HEADER SECTION ================= */}
         <div className="mb-20">
-          <p className="text-engineering-yellow text-xs font-black uppercase tracking-[0.5em] mb-2">
+          <p className="text-engineering-yellow text-xs font-mono font-black uppercase tracking-[0.5em] mb-2">
             Sector Portfolio
           </p>
           <h1 className="text-5xl md:text-7xl font-black uppercase italic text-white">
-            Institutional <span className="text-engineering-yellow">Projects</span>
+            Institutional <span className="text-engineering-yellow not-italic">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
             Specialized engineering for complex educational systems, high-compliance health centers, radiation-shielded cancer bunkers, and iconic long-span religious architecture.
           </p>
         </div>
 
-        {/* ================= PART 1: VISUAL FEATURED GRID (Strictly 2 per row) ================= */}
+        {/* ================= PART 1: VISUAL FEATURED GRID (Strictly 2 per row desktop) ================= */}
         <div className="mb-24">
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2 select-none">
             <Landmark size={14} className="text-engineering-yellow" /> Featured Blueprints
           </h2>
           
-          {/* Changed layout target configuration to md:grid-cols-2 explicitly */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featuredProjects.map((project, i) => (
               <motion.div
@@ -96,19 +95,23 @@ export default function InstitutionalGallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, duration: 0.4 }}
-                className="group relative w-full aspect-[4/3] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-5 md:p-6"
+                className="group relative w-full aspect-[4/3] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-5 md:p-6 cursor-pointer"
               >
+                {/* Background Image Layer with Cinematic Zoom Parallax */}
                 <div
-                  className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 z-0 bg-cover bg-center transform scale-100 transition-transform duration-700 ease-out group-hover:scale-110"
                   style={{ backgroundImage: `url(${project.img})` }}
                 />
-                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
+                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none" />
                 
-                <div className="relative z-10 min-w-0">
-                  <span className="text-engineering-yellow text-[9px] font-mono tracking-widest block mb-1">
+                {/* Content Layer */}
+                <div className="relative z-10 min-w-0 pointer-events-none">
+                  <span className="text-engineering-yellow text-[8px] font-mono tracking-widest block mb-1">
                     FOUNDATION INDEX 0{project.id}
                   </span>
-                  <h3 className="text-lg md:text-xl font-black uppercase italic text-white tracking-tight leading-tight break-words">
+                  
+                  {/* FIX: Reduced typography size standard from 'text-lg md:text-xl' to 'text-sm md:text-base' */}
+                  <h3 className="text-sm md:text-base font-bold uppercase italic text-white tracking-tight leading-tight break-words group-hover:text-engineering-yellow transition-colors duration-300">
                     {project.title}
                   </h3>
                 </div>
@@ -119,7 +122,7 @@ export default function InstitutionalGallery() {
 
         {/* ================= PART 2: CHRONOLOGICAL TIMELINE TRACK ================= */}
         <div>
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2">
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2 select-none">
             <MapPin size={14} className="text-engineering-yellow" /> Chronological Engineering Ledger
           </h2>
 
@@ -138,7 +141,7 @@ export default function InstitutionalGallery() {
                 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                   
-                  {/* Left Block: Index Counter + Project Name + Conditional Client Tag */}
+                  {/* Left Block: Index Counter + Project Name + Conditional Client Sub-row */}
                   <div className="flex-1 min-w-0">
                     <h3 className="text-sm md:text-base font-bold uppercase text-white tracking-tight group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
                       <span className="text-slate-600 font-mono text-xs mr-2 select-none inline-block w-6">
@@ -147,7 +150,7 @@ export default function InstitutionalGallery() {
                       {log.name}
                     </h3>
                     
-                    {/* CONDITION: Subtitle row is dropped if client metadata field matches "-" */}
+                    {/* CONDITION: If client parameter string is empty or equal to "-" the whole line is skipped */}
                     {log.client && log.client !== "-" && (
                       <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wider mt-1.5 pl-8 break-words leading-tight">
                         <span className="text-slate-600 font-mono normal-case mr-1">Trust / Entity:</span>

@@ -1,9 +1,9 @@
 'use client'
 import { motion } from 'framer-motion';
-import { MapPin, Home } from 'lucide-react';
+import { MapPin, Home, Crown } from 'lucide-react';
 
 export default function ResidentialGallery() {
-  // 1. Featured items with photos (Maintained in a crisp grid layout)
+  // 1. Featured items with photos (Optimized with smaller caption fonts + hover zoom)
   const featuredProjects = [
     { id: 1, title: "Apartment Building for Century Builders", img: "/projects/residential/c4167fa8-813c-4a89-ba91-1a2dc1733c94.jpg" },
     { id: 2, title: "High End Villa at Bengaluru", img: "/projects/residential/cc94bdfc-4fab-4631-ad3a-f4fa9726f7a0.jpg" },
@@ -16,10 +16,21 @@ export default function ResidentialGallery() {
     { id: 9, title: "Farmhouse at Sondekoppa, Bengaluru", img: "/projects/residential/farmhouse.png" },
     { id: 10, title: "Residence for Adv. Chandrashekhar Reddy at Sahakaranagar, Bengaluru", img: "/projects/residential/lawyer.png" },
     { id: 11, title: "Residence for Sri Veerendra Heggade (Beedu), Dharmasthala", img: "/projects/residential/beedu.jpg" },
-
   ];
 
-  // 2. Full Consolidated Residential & Housing Registry (71 entries)
+  // 2. Premium VIP High-Profile Private Residential Registry
+  const vipProjects = [
+    { name: "Residence at Cantonment, Bangalore", owner: "Sri Zameer Ahmed Khan, Minister", scope: "High-Security Executive Abode" },
+    { name: "Karthik Villa at Trissure, Kerala", owner: "MD, Kalyan Developers", scope: "Premium Luxury Estate" },
+    { name: "Kalyana Raman Villa at Trissure, Kerala", owner: "Chairman, Kalyan Jewellers", scope: "Luxury Estate Framework" },
+    { name: "Residence at Katni, Madhya Pradesh", owner: "Mittal Family", scope: "Private High-Load Estate" },
+    { name: "Residence at Indiranagara, Bangalore", owner: "Venkatesh Prasad, Cricket Player", scope: "Custom Residential Layout" },
+    { name: "Residence at Sadashiva Nagara, Bangalore", owner: "Suresh Bairathy, Minister, Govt. of K'taka", scope: "Executive Structural Layout" },
+    { name: "Residence At Mangalore", owner: "Lawyer PP Hegde", scope: "Private Villa Structure" },
+    { name: "Residence for Pushparaj Mangalore", owner: "Chairman Abhish Builder, Mangalore", scope: "Custom High-End Frame" }
+  ];
+
+  // 3. Full Consolidated Standard Housing Ledger Loop Track
   const projectLog = [
     { name: "Surya Residency at Bangalore", year: "2003-04", client: "M/S Surya Developers" },
     { name: "Banyan Tree Apartments Bangalore", year: "2005-06", client: "M/S Bhumija Developers" },
@@ -82,30 +93,21 @@ export default function ResidentialGallery() {
     { name: "Residential Building at Koteshwara", year: "2020", client: "Dr. Sabitha" },
     { name: "Girls Hostel Building at Moodabidare", year: "2018", client: "M/S Excelent College" },
     { name: "Beach house at Padukere", year: "2025", client: "BOLAS FAMILY KARKALA" },
-    { name: "BEEDU at Shree Dharmasthala", year: "2016-17", client: "Dr. D. Veerendra Heggade Ji" },
-    { name: "Residence at Cantonment, Bangalore", year: "-", client: "Sri Zameer Ahmed Khan, Minister" },
-    { name: "Karthik Villa at Trissure, Kerala", year: "-", client: "MD, Kalyan Developers" },
-    { name: "Kalyana Raman Villa at Trissure, Kerala", year: "-", client: "Chairman, Kalyan Jewellores" },
-    { name: "Residence at Katni, Madhya Pradesh", year: "-", client: "Mittal Family" },
-    { name: "Residence at Indiranagara, Bangalore", year: "-", client: "Venkatesh Prasad, Cricket Player" },
-    { name: "Residence at Sadashiva Nagara, Bangalore", year: "-", client: "Suresh Bairathy, Minister, Govt. of K'taka" },
-    { name: "Residence At Mangalore", year: "-", client: "Lawyer PP Hegde" },
-    { name: "Residence for Pushparaj Mangalore", year: "-", client: "Chairman Abhish Builder, Mangalore" },
     { name: "Residence at Sri Dharmasthala (Coastal Log)", year: "2010", client: "Mr. Yashovarma" },
     { name: "Residence at Ujire", year: "2010", client: "Na Ujire" }
   ];
 
   return (
-    <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24">
+    <main className="min-h-screen bg-engineering-bg text-white pt-32 pb-24 font-sans antialiased overflow-x-hidden">
       <div className="container mx-auto px-6 max-w-6xl">
         
         {/* ================= HEADER SECTION ================= */}
         <div className="mb-20">
-          <p className="text-engineering-yellow text-xs font-black uppercase tracking-[0.5em] mb-2">
+          <p className="text-engineering-yellow text-xs font-mono font-black uppercase tracking-[0.5em] mb-2">
             Sector Portfolio
           </p>
-          <h1 className="text-5xl md:text-7xl font-black uppercase italic text-white">
-            Residential <span className="text-engineering-yellow">Projects</span>
+          <h1 className="text-5xl md:text-7xl font-black uppercase italic text-white tracking-tight">
+            Residential <span className="text-engineering-yellow not-italic">Projects</span>
           </h1>
           <p className="text-slate-400 text-sm mt-4 max-w-2xl leading-relaxed">
             Safe, load-optimized structural engineering for modern living frameworks. Our portfolio 
@@ -113,32 +115,37 @@ export default function ResidentialGallery() {
           </p>
         </div>
 
-        {/* ================= PART 1: VISUAL GALLERIES (2 Columns) ================= */}
-        <div className="mb-28">
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
+        {/* ================= PART 1: VISUAL FEATURED GRID (Caption Size & Hover Zoom Fix) ================= */}
+        <div className="mb-24">
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-8 flex items-center gap-2 select-none">
             <Home size={14} className="text-engineering-yellow" /> Featured Residences
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project, i) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.5 }}
-                className="group relative h-[380px] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-8"
+                transition={{ delay: i * 0.03, duration: 0.4 }}
+                className="group relative w-full aspect-[4/3] overflow-hidden bg-slate-900 border border-white/10 flex flex-col justify-end p-5 md:p-6 cursor-pointer"
               >
+                {/* Background Image Layer with Cinematic Zoom Parallax */}
                 <div
-                  className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 z-0 bg-cover bg-center transform scale-100 transition-transform duration-700 ease-out group-hover:scale-110"
                   style={{ backgroundImage: `url(${project.img})` }}
                 />
-                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
-                <div className="relative z-10">
-                  <span className="text-engineering-yellow text-[10px] font-mono tracking-widest block mb-1">
+                <div className="absolute inset-0 z-[1] bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent pointer-events-none" />
+                
+                {/* Content Layer */}
+                <div className="relative z-10 min-w-0 pointer-events-none">
+                  <span className="text-engineering-yellow text-[8px] font-mono tracking-widest block mb-1">
                     FRAMEWORK STRUCTURE 0{project.id}
                   </span>
-                  <h3 className="text-2xl font-black uppercase italic text-white tracking-tight">
+                  
+                  {/* FIXED: Reduced class specification down to text-sm md:text-base to prevent text overlapping visually */}
+                  <h3 className="text-sm md:text-base font-bold uppercase italic text-white tracking-tight leading-tight break-words group-hover:text-engineering-yellow transition-colors duration-300">
                     {project.title}
                   </h3>
                 </div>
@@ -147,13 +154,58 @@ export default function ResidentialGallery() {
           </div>
         </div>
 
-        {/* ================= PART 2: CHRONOLOGICAL TIMELINE TRACK ================= */}
-        <div>
-          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2">
-            <MapPin size={14} className="text-engineering-yellow" /> Chronological Engineering Ledger
-          </h2>
+        {/* ================= PART 2: THE VIP ESTATE PORTFOLIO ================= */}
+        <div className="mb-24 border border-engineering-yellow/20 bg-slate-950/40 p-6 md:p-10 rounded relative overflow-hidden">
+          <div className="flex items-center gap-3 mb-2">
+            <Crown size={18} className="text-engineering-yellow" />
+            <h2 className="text-sm font-mono font-black text-engineering-yellow uppercase tracking-[0.3em]">
+              Executive Estates & VIP Private Registry
+            </h2>
+          </div>
+          <p className="text-xs text-slate-400 max-w-xl mb-10 leading-relaxed">
+            High-end structural frameworks, bespoke villa designs, and custom deep-foundation engineering executed directly for prominent industry figures, public executives, and luxury developers.
+          </p>
 
-          {/* Master Vertical Timeline Line */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+            {vipProjects.map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04, duration: 0.4 }}
+                className="border-l-2 border-engineering-yellow bg-white/[0.02] p-5 flex flex-col justify-between hover:bg-white/[0.04] transition-colors duration-300 group"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-4 mb-2">
+                    <span className="text-[9px] font-mono font-black text-engineering-yellow bg-engineering-yellow/10 border border-engineering-yellow/20 px-2 py-0.5 tracking-wider">
+                      {project.scope}
+                    </span>
+                    <span className="text-xs font-mono text-slate-600 font-bold">EST_V0{i + 1}</span>
+                  </div>
+                  
+                  <h3 className="text-sm md:text-base font-bold uppercase text-white tracking-tight leading-tight group-hover:text-engineering-yellow transition-colors duration-300 mt-2 break-words">
+                    {project.name}
+                  </h3>
+                </div>
+
+                {project.owner && project.owner !== "-" && (
+                  <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider mt-4 pt-3 border-t border-white/5 font-mono">
+                    <span className="text-slate-600 normal-case mr-1">Client:</span>
+                    {project.owner}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        
+        {/* ================= PART 3: CHRONOLOGICAL TIMELINE TRACK (Standard Housing Assets) ================= */}
+        <div>
+          <h2 className="text-xs font-black text-slate-500 uppercase tracking-[0.3em] mb-12 flex items-center gap-2 select-none">
+            <MapPin size={14} className="text-engineering-yellow" /> Housing & Towers Registry
+          </h2> 
+
           <div className="relative border-l border-white/10 pl-6 ml-2 space-y-10">
             {projectLog.map((log, index) => (
               <motion.div
@@ -164,14 +216,11 @@ export default function ResidentialGallery() {
                 transition={{ duration: 0.35 }}
                 className="relative group"
               >
-                {/* Interactive Node Dot */}
                 <div className="absolute -left-[31px] top-1.5 w-2 h-2 rounded-full bg-slate-900 border border-white/30 group-hover:bg-engineering-yellow group-hover:border-engineering-yellow transition-colors duration-300 z-10" />
                 
-                {/* Responsive Track Row Container */}
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
                   
-                  {/* Left Block: Index Counter + Project Title + Client Tag */}
-                  <div className="max-w-3xl">
+                  <div className="flex-1 min-w-0">
                     <h3 className="text-sm md:text-base font-bold uppercase text-white tracking-tight group-hover:text-engineering-yellow transition-colors duration-300 break-words leading-tight">
                       <span className="text-slate-600 font-mono text-xs mr-2 select-none inline-block w-6">
                         {String(index + 1).padStart(2, '0')}.
@@ -179,13 +228,14 @@ export default function ResidentialGallery() {
                       {log.name}
                     </h3>
                     
-                    <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wider mt-1.5 pl-8 break-words leading-tight">
-                      <span className="text-slate-600 font-mono normal-case mr-1">Developer / Client:</span>
-                      {log.client !== "-" ? log.client : "Private Residential Commission"}
-                    </p>
+                    {log.client && log.client !== "-" && (
+                      <p className="text-[11px] text-slate-400 font-medium uppercase tracking-wider mt-1.5 pl-8 break-words leading-tight">
+                        <span className="text-slate-600 font-mono normal-case mr-1">Developer / Client:</span>
+                        {log.client}
+                      </p>
+                    )}
                   </div>
                   
-                  {/* Right Block: Date / Status Badge */}
                   <div className="text-xs font-mono text-slate-400 bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded pl-8 md:pl-2.5 self-start md:self-auto min-w-[90px] text-center shrink-0 tracking-wider">
                     {log.year !== "-" ? log.year : "COMPLETE"}
                   </div>
