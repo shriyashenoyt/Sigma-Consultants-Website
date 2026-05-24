@@ -86,7 +86,7 @@ export default function AwardsPage() {
             Silver Jubilee Year
           </p>
           <h1 className="text-5xl md:text-7xl font-black uppercase italic mb-6 leading-none">
-            Awards & <span className="text-engineering-yellow">Honors.</span>
+            Honors & <span className="text-engineering-yellow">Milestones.</span>
           </h1>
           <p className="text-slate-400 text-sm md:text-base leading-relaxed">
             Our commitment to structural safety and mathematical precision has been 

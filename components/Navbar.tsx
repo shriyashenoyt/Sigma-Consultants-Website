@@ -73,7 +73,7 @@ const Navbar = () => {
             About
           </Link>
           <Link href="/awards" className="text-xs font-bold uppercase tracking-widest text-white/80 hover:text-engineering-yellow transition-all">
-            Awards
+            Honors
           </Link>
           <Link href="/contact" className="px-6 py-2 border-2 border-engineering-yellow text-engineering-yellow text-xs font-black uppercase tracking-tighter hover:bg-engineering-yellow hover:text-engineering-bg transition-all">
             Contact
